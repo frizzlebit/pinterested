@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+  
+<div class="panel-heading">  
+<h2>Forgot your password?</h2>
+</div> <!-- end panel-heading -->
+
+<div class="panel-body">
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions" %>
+  </div>
+<% end %>
+</div> <!-- end .panel-body -->
+
+<div class="panel-footer">
+<%= render "devise/shared/links" %>
+</div> <!-- end panel-footer -->
+</div> <!-- end panel panel-default -->
